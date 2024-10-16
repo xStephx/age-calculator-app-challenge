@@ -2,6 +2,8 @@ tailwind.config = {
     theme: {
         extend: {
             colors: {
+                Purple: 'hsl(259, 100%, 65%)',
+                LightRed: 'hsl(0, 100%, 67%)',
                 White: 'hsl(0, 0%, 100%)', 
                 OffWhite: 'hsl(0, 0%, 94%)', 
                 LightGrey: 'hsl(0, 0%, 86%)',
