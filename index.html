@@ -19,42 +19,45 @@
 <body class="bg-OffWhite font-Poppins flex flex-col justify-center items-center min-h-screen">
   <main class="bg-White mx-5 flex flex-col justify-center rounded-3xl rounded-br-[100px] md:px-12 md:py-16 px-7 py-10">
     <form class="flex lg:gap-7 md:gap-5 gap-4">
-      <label for="day" class="flex flex-col text-SmokeyGrey font-semibold uppercase lg:max-w-[160px] md:max-w-[120px] max-w-[85px]">
+      <label id="error-label-day" for="day" class="flex flex-col text-SmokeyGrey font-semibold uppercase lg:max-w-[160px] md:max-w-[120px] max-w-[85px]">
         Day
-        <input type="text" placeholder="DD" class="border-LightGrey border-[1px] rounded-lg px-4 lg:placeholder:text-[30px] placeholder:text-[20px] lg:text-[30px] text-[20px] text-OffBlack outline-Purple cursor-pointer h-16">
+        <input id="input-day" type="text" placeholder="DD" class="border-LightGrey border-[1px] rounded-lg px-4 lg:placeholder:text-[30px] placeholder:text-[20px] lg:text-[30px] text-[20px] text-OffBlack outline-Purple cursor-pointer h-16">
+        <p id="error-message-day" class="normal-case font-normal text-LightRed text-sm italic my-2"></p>
       </label>
       
-      <label for="month" class="flex flex-col text-SmokeyGrey font-semibold uppercase lg:max-w-[160px] md:max-w-[120px] max-w-[85px]">
+      <label id="error-label-month" for="month" class="flex flex-col text-SmokeyGrey font-semibold uppercase lg:max-w-[160px] md:max-w-[120px] max-w-[85px]">
         Month
-        <input type="text" placeholder="MM" class="border-LightGrey border-[1px] rounded-lg px-4 lg:placeholder:text-[30px] placeholder:text-[20px] lg:text-[30px] text-[20px] text-OffBlack outline-Purple cursor-pointer h-16">
+        <input id="input-month" type="text" placeholder="MM" class="border-LightGrey border-[1px] rounded-lg px-4 lg:placeholder:text-[30px] placeholder:text-[20px] lg:text-[30px] text-[20px] text-OffBlack outline-Purple cursor-pointer h-16">
+        <p id="error-message-month" class="normal-case font-normal text-LightRed text-sm italic my-2"></p>
       </label>
       
-      <label for="year" class="flex flex-col text-SmokeyGrey font-semibold uppercase lg:max-w-[160px] md:max-w-[120px] max-w-[85px]">
+      <label id="error-label-year" for="year" class="flex flex-col text-SmokeyGrey font-semibold uppercase lg:max-w-[160px] md:max-w-[120px] max-w-[85px]">
         Year
-        <input type="text" placeholder="YYYY" class="border-LightGrey border-[1px] rounded-lg px-4 lg:placeholder:text-[30px] placeholder:text-[20px] lg:text-[30px] text-[20px] text-OffBlack outline-Purple cursor-pointer h-16">
+        <input id="input-year" type="text" placeholder="YYYY" class="border-LightGrey border-[1px] rounded-lg px-4 lg:placeholder:text-[30px] placeholder:text-[20px] lg:text-[30px] text-[20px] text-OffBlack outline-Purple cursor-pointer h-16">
+        <p id="error-message-year" class="normal-case font-normal text-LightRed text-sm italic my-2"></p>
       </label>
     </form>
     <div class="relative flex justify-center">
       <hr class="border-0 h-[1px] bg-LightGrey lg:my-8 md:my-12 my-14 w-full">
-      <button class="lg:p-7 md:p-5 p-4 bg-Purple rounded-full absolute lg:top-[-15px] md:top-[10px] top-[20px] lg:right-0 md:right-0 hover:bg-OffBlack transition-all duration-300 ease-in-out">
+      <button id="submit-button" class="lg:p-7 md:p-5 p-4 bg-Purple rounded-full absolute lg:top-[-15px] md:top-[10px] top-[20px] lg:right-0 md:right-0 hover:bg-OffBlack transition-all duration-300 ease-in-out">
         <img src="assets/images/icon-arrow.svg" alt="Arrow Icon" class="lg:w-full w-[40px]">
       </button>
     </div>
     <div class="lg:pr-[170px] lg:pb-[30px]">
-      <p class="lg:text-8xl md:text-6xl text-5xl font-bold italic">
-        <span class="text-Purple">
+      <p class="lg:text-8xl md:text-6xl text-5xl font-bold italic my-2">
+        <span id="years" class="text-Purple">
           --
         </span>
         years
       </p>
-      <p class="lg:text-8xl md:text-6xl text-5xl font-bold italic">
-        <span class="text-Purple">
+      <p class="lg:text-8xl md:text-6xl text-5xl font-bold italic my-2">
+        <span id="months" class="text-Purple">
           --
         </span>
         months
       </p>
-      <p class="lg:text-8xl md:text-6xl text-5xl font-bold italic">
-        <span class="text-Purple">
+      <p class="lg:text-8xl md:text-6xl text-5xl font-bold italic my-2">
+        <span id="days" class="text-Purple">
           --
         </span>
         days
