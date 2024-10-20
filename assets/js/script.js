@@ -1,3 +1,4 @@
+// DOM elements
 const inputDay = document.getElementById('input-day');
 const inputMonth = document.getElementById('input-month');
 const inputYear = document.getElementById('input-year');
@@ -16,11 +17,13 @@ const errorLabelDay = document.getElementById('error-label-day');
 const errorLabelMonth = document.getElementById('error-label-month');
 const errorLabelYear = document.getElementById('error-label-year');
 
+// Current date
 const currentDate = new Date();
 const currentDay = currentDate.getDate();
 const currentMonth = currentDate.getMonth() + 1;
 const currentYear = currentDate.getFullYear();
 
+// Function for adding error
 function addError(input, errorLabel, errorMessage, message) {
     input.classList.add('border-LightRed');
     errorLabel.classList.remove('text-SmokeyGrey');
@@ -28,6 +31,7 @@ function addError(input, errorLabel, errorMessage, message) {
     errorMessage.textContent = message;
 }
 
+// Function for removing error
 function removeError(input, errorLabel, errorMessage) {
     input.classList.remove('border-LightRed');
     errorLabel.classList.remove('text-LightRed');
@@ -35,6 +39,7 @@ function removeError(input, errorLabel, errorMessage) {
     errorMessage.textContent = '';
 }
 
+// Function for validating input
 function validateInput(inputValue, inputField, errorLabel, errorMessage) {
     if (inputField.value === '') {
         addError(inputField, errorLabel, errorMessage, 'This field is required');
@@ -45,6 +50,7 @@ function validateInput(inputValue, inputField, errorLabel, errorMessage) {
     }
 }
 
+// Function for validating date
 function isValidDate(day, month, year) {
     let isValid = true;
 
@@ -97,6 +103,7 @@ function isValidDate(day, month, year) {
     return true;
 }
 
+// Function for animate result
 function animateCountUp(element, start, end, duration) {
     let current = start;
     const increment = (end - start) / (duration / 100);
@@ -112,17 +119,19 @@ function animateCountUp(element, start, end, duration) {
     }, 100);
 }
 
+// Function for allowing only numbers
 function allowNumbersOnly(event) {
     const input = event.target;
     const value = input.value;
 
     input.value = value.replace(/[^0-9]/g, '');
 }
-
+// Event listeners for restrict only numbers
 inputDay.addEventListener('input', allowNumbersOnly);
 inputMonth.addEventListener('input', allowNumbersOnly);
 inputYear.addEventListener('input', allowNumbersOnly);
 
+// Function for submiting
 function submit(event) {
     event.preventDefault();
 
@@ -141,8 +150,10 @@ function submit(event) {
     isValidDate(inputDayValue, inputMonthValue, inputYearValue);
 }
 
+// Submitting on button
 submitButton.addEventListener('click', submit);
 
+// Submitting on keyboard (Enter)
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         submit(event);
